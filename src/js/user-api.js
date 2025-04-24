@@ -2,17 +2,17 @@
 export async function loginAPI(prefixoUsuario, password) {
     const dados = { prefixoUsuario, password };
     console.log(dados)  
-    const resposta = await fetch('https://localhost:7009/User/login', {
+    const response = await fetch('https://localhost:7009/User/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(dados)
+        body: JSON.stringify(dados),
     });
-    console.log(resposta)
-    if (!resposta.ok) {
+    console.log(response)
+    if (!response.ok) {
         throw new Error('Usuário ou senha incorretos');
     }
 
-    return await resposta.text(); // retorna o resultado da API
+    return await response.text(); // retorna o resultado da API
 }

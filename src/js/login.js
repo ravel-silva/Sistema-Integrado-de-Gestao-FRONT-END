@@ -1,4 +1,5 @@
-import { loginAPI } from './api.js';
+import { loginAPI } from './user-api.js';
+
 
 async function logar(event) {
    event.preventDefault();
@@ -19,3 +20,5 @@ async function logar(event) {
    }
 }
 document.querySelector('form.login').addEventListener('submit', logar);
+
+
