@@ -1,7 +1,3 @@
-Perfeito! Com base no seu repositório do back-end [Sistema Integrado de Gestão](https://github.com/ravel-silva/Sistema-Integrado-de-Gestao), aqui está um modelo atualizado de README para o **front-end**, com um link para a API incluído e espaço para ajustes conforme a stack que você está usando:
-
----
-
 # Sistema Integrado de Gestão - Front-End 🖥️
 
 🚧 **Status do Projeto**  
