@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #0f1b2b; /* fundo escuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background-color: #18283d; /* leve contraste com o fundo */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 178, 255, 0.2);
+    overflow: hidden;
+    max-width: 850px;
+    width: 100%;
+    color: #ffffff;
+}
+
+.img {
+    flex: 1;
+    background-color: #0f1b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-login {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1d2c41;
+}
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-login label {
+    font-weight: bold;
+    color: #00b2ff;
+}
+
+.formulario-login input {
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    background-color: #0f1b2b;
+    color: #fff;
+}
+
+.formulario-login input:focus {
+    border: 1px solid #00b2ff;
+    outline: none;
+    background-color: #152234;
+}
