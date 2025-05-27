@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+.cabecalho{
+    display: flex;
+ 
+}
+.container-menu{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.container-menu div {
+    display: inline-flex;
+    align-items: center;
+    width: 120px;
+   justify-content: center;
+    padding: 10px 20px; 
+    background-color: #00b2ff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 178, 255, 0.3);
+}
+
+.container-menu div:hover{
+    background-color: #0098d4;
+}
