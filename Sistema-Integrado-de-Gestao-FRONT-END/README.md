@@ -1,4 +1,4 @@
-💼 Sistema Integrado de Gestão – Front-End
+## 💼 Sistema Integrado de Gestão – Front-End
 📍 Repositório destinado à interface web do Sistema Integrado de Gestão (SIG), que se conecta à API SIG Back-End desenvolvida em ASP.NET Core. A proposta é facilitar a gestão de equipes, funcionários, materiais e solicitações dentro de uma organização, com uma interface simples, funcional e escalável.
 
 🚧 Status do Projeto
