@@ -1,0 +1,64 @@
+.tituloContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+.titulo {
+
+  font-size: 24px;
+  color: #1f2937;
+}
+
+/* Container */
+.container {
+  padding: 0 20px;
+}
+
+/* Tabela */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+/* Cabeçalho */
+.tabela th {
+  background-color: #1f2937;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Células */
+.tabela td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Linhas */
+.tabela tr:hover {
+  background-color: #f3f4f6;
+}
+button {
+  background-color: #f65656;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.buttonEditar{
+background-color: #1f2937;
+}
+.buttonAdicionar{
+background-color: #1f2937;
+}
+.buttonAdicionar:hover{
+background-color: #254782;
+}
+button:hover {
+  background-color: #dc2626;
+}
