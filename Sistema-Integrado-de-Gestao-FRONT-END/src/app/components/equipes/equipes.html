@@ -1,6 +1,6 @@
 <div class="tituloContainer">
   <h1 class="titulo">Equipes</h1>
-<button class="buttonAdicionar">Adicionar Equipe</button>
+  <button class="buttonAdicionar">Adicionar Equipe</button>
 </div>
 
 <div class="container">
@@ -13,18 +13,28 @@
         <th></th>
       </tr>
     </thead>
+
     <tbody>
-      <tr>
-        <td>API Prefixo</td>
-        <td>
-          API Funcionarios 1<br>
-          API Funcionarios 2
-        </td>
+      <!-- Dados vindos da API -->
+      <tr *ngFor="let equipe of equipes">
+        <td>{{ equipe.prefixo }}</td>
+
+        <!-- Campo ainda não implementado -->
+        <td></td>
+
         <td>
           <button class="buttonEditar">Editar</button>
         </td>
+
         <td>
           <button>Excluir</button>
+        </td>
+      </tr>
+
+      <!-- Caso não exista nenhuma equipe -->
+      <tr *ngIf="equipes.length === 0">
+        <td colspan="4" style="text-align: center;">
+          Nenhuma equipe encontrada
         </td>
       </tr>
     </tbody>
