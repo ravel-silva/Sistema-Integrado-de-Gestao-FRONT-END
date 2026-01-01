@@ -9,7 +9,17 @@
   "projects": {
     "Sistema-Integrado-de-Gestao-FRONT-END": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+    "standalone": true,
+    "style": "css",
+    "skipTests": true,
+    "changeDetection": "OnPush"
+  },
+  "@schematics/angular:service": {
+    "skipTests": true
+  }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

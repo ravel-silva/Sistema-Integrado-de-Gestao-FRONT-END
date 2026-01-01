@@ -16,11 +16,16 @@
 
     <tbody>
       <!-- Dados vindos da API -->
-      <tr *ngFor="let equipe of equipes">
+      @for (equipe of equipes; track equipe.id) {
+
+      <tr>
         <td>{{ equipe.prefixo }}</td>
 
         <!-- Campo ainda não implementado -->
-        <td></td>
+        <td>
+          <!-- Exemplo estático -->
+          Funcionário 1<br> Funcionário 2
+        </td>
 
         <td>
           <button class="buttonEditar">Editar</button>
@@ -30,13 +35,31 @@
           <button>Excluir</button>
         </td>
       </tr>
+      }
 
       <!-- Caso não exista nenhuma equipe -->
-      <tr *ngIf="equipes.length === 0">
+      @if (equipes.length === 0) {
+      <tr>
         <td colspan="4" style="text-align: center;">
           Nenhuma equipe encontrada
         </td>
       </tr>
+      }
     </tbody>
   </table>
+</div>
+
+<div class="cadastro">
+  <div>
+    <h2 class="tituloCadastro">Cadastrar Equipe</h2>
+    <form>
+      <label for="prefixo">Prefixo:</label>
+      <input type="text" id="prefixo" name="prefixo" />
+
+      <div class="botoesCadastro">
+        <button type="submit" class="buttonAdicionar">Salvar</button>
+        <button type="button" class="buttonCancelar">Cancelar</button>
+      </div>
+    </form>
+  </div>
 </div>

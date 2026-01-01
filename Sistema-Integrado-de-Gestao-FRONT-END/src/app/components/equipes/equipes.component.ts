@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-equipes',
   imports: [CommonModule],
   standalone: true,
-  templateUrl: './equipes.html',
-  styleUrl: './equipes.css',
+  templateUrl: './equipes.component.html',
+  styleUrl: './equipes.component.css',
 })
 export class Equipes implements OnInit {
 
