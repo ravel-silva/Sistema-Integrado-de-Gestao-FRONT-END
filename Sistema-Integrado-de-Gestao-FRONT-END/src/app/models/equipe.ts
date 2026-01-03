@@ -1,5 +1,5 @@
 export interface Equipe {
-  id: number;
+  id?: number;
   prefixo: string;
   dataCriacao: string;
 }

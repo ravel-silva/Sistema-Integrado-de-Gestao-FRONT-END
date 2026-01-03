@@ -1,0 +1,14 @@
+<div class="cadastro">
+  <div>
+    <h2 class="tituloCadastro">Cadastrar Equipe</h2>
+    <form >
+      <label for="prefixo">Prefixo:</label>
+      <input type="text" id="prefixo" name="prefixo" [(ngModel)]="cadastroEquipe.prefixo" required />
+
+      <div class="botoesCadastro">
+        <button (ngSubmit)="onSubmit()" type="submit" class="buttonSalvar">Salvar</button>
+        <button [routerLink]="['/equipes']" type="button" class="buttonCancelar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
