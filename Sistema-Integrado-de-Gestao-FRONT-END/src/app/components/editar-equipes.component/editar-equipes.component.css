@@ -1,11 +1,11 @@
-.cadastrar-equipe {
+.editar-equipe {
   margin: 20px;
   display: flex;
   justify-content: center;
 }
 
 /* Card */
-.cadastrar-equipe__card {
+.editar-equipe__card {
   width: 100%;
   max-width: 500px;
   background-color: #ffffff;
@@ -15,27 +15,27 @@
 }
 
 /* Título */
-.cadastrar-equipe__titulo {
+.editar-equipe__titulo {
   font-size: 22px;
   color: #1f2937;
   margin-bottom: 20px;
 }
 
 /* Form */
-.cadastrar-equipe__card form {
+.editar-equipe__card form {
   display: flex;
   flex-direction: column;
 }
 
 /* Label */
-.cadastrar-equipe__card label {
+.editar-equipe__card label {
   font-weight: 500;
   margin-bottom: 6px;
   color: #374151;
 }
 
 /* Input */
-.cadastrar-equipe__card input {
+.editar-equipe__card input {
   padding: 10px;
   border: 1px solid #d1d5db;
   border-radius: 4px;
@@ -43,13 +43,13 @@
   margin-bottom: 20px;
 }
 
-.cadastrar-equipe__card input:focus {
+.editar-equipe__card input:focus {
   outline: none;
   border-color: #1f2937;
 }
 
 /* Botões */
-.cadastrar-equipe__botoes {
+.editar-equipe__botoes {
   display: flex;
   justify-content: flex-end;
   gap: 10px;

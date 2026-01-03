@@ -60,4 +60,19 @@ export class EquipesComponent implements OnInit {
       });
     }
   }
+
+  editar(equipe: Equipe): void {
+    this.equipesService.editarEquipe(equipe).subscribe({
+      next: (equipeAtualizada) => {
+        const index = this.equipes.findIndex(e => e.id === equipeAtualizada.id);
+        if (index !== -1) {
+          this.equipes[index] = equipeAtualizada;
+          this.cdr.detectChanges();
+        }
+      },
+      error: (erro) => {
+        console.error('Erro ao editar equipe:', erro);
+      }
+    });
+  }
 }

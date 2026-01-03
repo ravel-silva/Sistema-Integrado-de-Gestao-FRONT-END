@@ -15,7 +15,7 @@ import { EquipesService } from '../../services/equipes/Equipes.service';
 export class CadastrarEquipeComponent {
   cadastroEquipe: Equipe = {
     prefixo: '',
-    dataCriacao: '',
+    dataCriacao: new Date().toISOString(),
 
   };
 
@@ -26,8 +26,9 @@ export class CadastrarEquipeComponent {
       next: (equipeCriada) => {
         console.log('Equipe criada com sucesso:', equipeCriada);
         //limpar formulário após o cadastro
-        
+
         this.cadastroEquipe = { prefixo: '', dataCriacao: new Date().toISOString() };
+        alert('Equipe criada com sucesso! '+ equipeCriada.prefixo);
       },
       error: (erro) => {
         console.error('Erro ao criar equipe:', erro);

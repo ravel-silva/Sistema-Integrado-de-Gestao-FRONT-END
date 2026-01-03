@@ -1,19 +1,19 @@
-<div class="cadastrar-equipe">
-  <div class="cadastrar-equipe__card">
-    <h2 class="cadastrar-equipe__titulo">Cadastrar Equipe</h2>
+<div class="editar-equipe">
+  <div class="editar-equipe__card">
+    <h2 class="editar-equipe__titulo">Modificar Equipe</h2>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmitEditar()">
       <label for="prefixo">Prefixo:</label>
 
       <input
         type="text"
         id="prefixo"
         name="prefixo"
-        [(ngModel)]="cadastroEquipe.prefixo"
+        [(ngModel)]="editarEquipes.prefixo"
         required
       />
 
-      <div class="cadastrar-equipe__botoes">
+      <div class="editar-equipe__botoes">
         <button type="submit" class="btn-salvar">Salvar</button>
 
         <button

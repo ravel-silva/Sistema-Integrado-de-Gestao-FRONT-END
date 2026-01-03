@@ -6,7 +6,7 @@ import { CadastrarEquipeComponent } from "./components/cadastrar-equipe/cadastra
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Home],
   standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.css'
