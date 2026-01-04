@@ -1,12 +1,13 @@
 import { EquipesService } from '../../services/equipes/Equipes.service';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit } from '@angular/core';
 import { Equipe } from '../../models/equipe';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-equipes',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   standalone: true,
   templateUrl: './equipes.component.html',
   styleUrl: './equipes.component.css',
@@ -56,6 +57,7 @@ export class EquipesComponent implements OnInit {
         },
         error: (erro) => {
           console.error('Erro ao excluir equipe:', erro);
+          this.cdr.detectChanges();
         }
       });
     }
@@ -72,6 +74,27 @@ export class EquipesComponent implements OnInit {
       },
       error: (erro) => {
         console.error('Erro ao editar equipe:', erro);
+      }
+    });
+  }
+
+
+
+  ProcurarTexto(e: Event) {
+    const prefixo = (e.target as HTMLInputElement).value;
+
+    if (!prefixo || prefixo.length < 1) {
+      this.carregarEquipes();
+      return;
+    }
+
+    this.equipesService.pesquisarEquipePorPrefixo(prefixo).subscribe({
+      next: (equipesEncontradas) => {
+        this.equipes = equipesEncontradas;
+        this.cdr.detectChanges();
+      },
+      error: (erro) => {
+        console.error('Erro ao buscar equipe por prefixo:', erro);
       }
     });
   }

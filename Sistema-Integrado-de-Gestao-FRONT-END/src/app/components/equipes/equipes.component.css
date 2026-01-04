@@ -63,3 +63,28 @@ button:hover {
   background-color: #dc2626;
 }
 
+
+/* Inputs de pesquisa */
+.inputPesquisa {
+  width: 50%;
+  margin-top: 6px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Ao focar no input */
+.inputPesquisa:focus {
+  border-color: #209CEE;
+  box-shadow: 0 0 0 2px rgba(32, 156, 238, 0.2);
+}
+
+/* Placeholder */
+.inputPesquisa::placeholder {
+  color: #9ca3af;
+  font-size: 13px;
+}

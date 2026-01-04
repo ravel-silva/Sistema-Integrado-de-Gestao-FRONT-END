@@ -19,7 +19,9 @@ export class EquipesService {
   pesquisarEquipePorId(id: number) {
    return this.http.get<Equipe>(`${this.apiUrl}/selecionarEquipePorId/${id}`);
  }
-
+ pesquisarEquipePorPrefixo(prefixo: string) {
+   return this.http.get<Equipe[]>(`${this.apiUrl}/selecionarEquipePorPrefixo/${prefixo}`);
+ }
   cadastroEquipe(equipe: Equipe): Observable<Equipe> {
     return this.http.post<Equipe>(this.apiUrl + '/registrar', equipe);
   }
