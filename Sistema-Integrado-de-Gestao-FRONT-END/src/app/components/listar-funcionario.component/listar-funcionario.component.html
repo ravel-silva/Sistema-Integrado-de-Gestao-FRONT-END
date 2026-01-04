@@ -1,0 +1,46 @@
+<div class="tituloContainer">
+  <h1 class="titulo">Funcionários</h1>
+  <button class="buttonAdicionar">Adicionar Funcionário</button>
+</div>
+
+<div class="container">
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome <input type="search" class="inputPesquisa" placeholder="Buscar..."></th>
+        <th>Matricula  <input type="search" class="inputPesquisa" placeholder="Buscar..."></th>
+        <th>Data de Criação <input type="search" class="inputPesquisa" placeholder="Buscar..."></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- Dados vindos da API -->
+      @for (funcionario of funcionarios; track funcionario.id) {
+
+      <tr>
+        <td>{{ funcionario.nome }}</td>
+        <td class="text-center">{{ funcionario.matricula }}</td>
+        <td class="text-center">{{ funcionario.dataCriacao | date:'dd MMMM yyyy - HH:mm:ss' }}</td>
+
+        <td>
+          <button class="buttonEditar">Editar</button>
+        </td>
+
+        <td>
+          <button>Excluir</button>
+        </td>
+      </tr>
+      }
+
+      <!-- Caso não exista nenhum funcionário -->
+      @if (funcionarios.length === 0) {
+      <tr>
+        <td colspan="5" style="text-align: center;">
+          Nenhum funcionário encontrado
+        </td>
+      </tr>
+      }
+  </table>
+</div>

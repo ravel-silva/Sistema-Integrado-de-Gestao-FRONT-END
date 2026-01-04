@@ -1,0 +1,93 @@
+.tituloContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+.titulo {
+
+  font-size: 24px;
+  color: #1f2937;
+}
+
+/* Container */
+.container {
+  padding: 0 20px;
+}
+
+/* Tabela */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+/* Cabeçalho */
+.tabela th {
+  background-color: #1f2937;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Células */
+.tabela td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Linhas */
+.tabela tr:hover {
+  background-color: #f3f4f6;
+}
+.text-center {
+  text-align: center;
+}
+button {
+  background-color: #f65656;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.buttonEditar{
+background-color: #1f2937;
+}
+.buttonAdicionar{
+background-color: #1f2937;
+}
+.buttonAdicionar:hover{
+background-color: #209CEE;
+}
+button:hover {
+  background-color: #dc2626;
+}
+
+
+/* Inputs de pesquisa */
+.inputPesquisa {
+  width: 70%;
+  margin-top: 6px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Ao focar no input */
+.inputPesquisa:focus {
+  border-color: #209CEE;
+  box-shadow: 0 0 0 2px rgba(32, 156, 238, 0.2);
+}
+
+/* Placeholder */
+.inputPesquisa::placeholder {
+  color: #9ca3af;
+  font-size: 13px;
+}

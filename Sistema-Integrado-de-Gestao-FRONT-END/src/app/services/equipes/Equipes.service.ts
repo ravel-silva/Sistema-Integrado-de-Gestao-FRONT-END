@@ -2,6 +2,7 @@ import { Equipe } from './../../models/equipe';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environment.development';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class EquipesService {
 
-  private apiUrl = 'https://localhost:7204/equipe';
+  private apiUrl = environment.apiUrlEquipe;
 
   constructor(private http: HttpClient) { }
 

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { EquipesComponent } from './components/equipes/equipes.component';
 import { CadastrarEquipeComponent } from './components/cadastrar-equipe/cadastrar-equipe.component';
 import { EditarEquipesComponent } from './components/editar-equipes.component/editar-equipes.component';
+import { ListarFuncionarioComponent } from './components/listar-funcionario.component/listar-funcionario.component';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'editar-equipes/:id',
     component: EditarEquipesComponent
+  },
+  {
+    path: 'funcionarios',
+    component: ListarFuncionarioComponent
   }
 ];
