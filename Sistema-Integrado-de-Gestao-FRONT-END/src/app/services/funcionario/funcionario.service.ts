@@ -23,5 +23,7 @@ export class FuncionarioService {
   pesquisarFuncionarioPorMatricula(nome: string) {
     return this.http.get<Funcionario[]>(`${this.apiUrl}/selecionarFuncionarioPorMatricula/${nome}`);
   }
-
+  excluirFuncionario(id: number) {
+    return this.http.delete(`${this.apiUrl}/excluirFuncionario/${id}`);
+  }
 }
