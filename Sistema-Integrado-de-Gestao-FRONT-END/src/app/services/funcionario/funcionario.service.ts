@@ -14,4 +14,14 @@ export class FuncionarioService {
   listarFuncionarios() {
     return this.http.get<Funcionario[]>(this.apiUrl + '/listarFuncionarios');
   }
+
+
+
+  pesquisarFuncionarioPorNome(nome: string) {
+    return this.http.get<Funcionario[]>(`${this.apiUrl}/selecionarFuncionarioPorNome/${nome}`);
+  }
+  pesquisarFuncionarioPorMatricula(nome: string) {
+    return this.http.get<Funcionario[]>(`${this.apiUrl}/selecionarFuncionarioPorMatricula/${nome}`);
+  }
+
 }

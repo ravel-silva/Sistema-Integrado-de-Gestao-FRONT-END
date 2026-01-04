@@ -7,22 +7,35 @@
   <table class="tabela">
     <thead>
       <tr>
-        <th>Nome <input type="search" class="inputPesquisa" placeholder="Buscar..."></th>
-        <th>Matricula  <input type="search" class="inputPesquisa" placeholder="Buscar..."></th>
-        <th>Data de Criação <input type="search" class="inputPesquisa" placeholder="Buscar..."></th>
+        <th>
+          Nome
+          <input type="search" class="inputPesquisa" placeholder="Buscar..." (input)="pesquisarPorNome($event)">
+        </th>
+
+        <th>
+          Matrícula
+          <input type="search" class="inputPesquisa" placeholder="Buscar..." (input)="pesquisarPorMatricula($event)">
+        </th>
+
+        <th>
+          Data de Criação
+          <input type="search" class="inputPesquisa" placeholder="Buscar..." [(ngModel)]="dataPesquisa"
+            (input)="pesquisarPorData()">
+        </th>
+
         <th></th>
         <th></th>
       </tr>
     </thead>
 
     <tbody>
-      <!-- Dados vindos da API -->
-      @for (funcionario of funcionarios; track funcionario.id) {
-
+      @for (funcionario of funcionariosFiltrados; track funcionario.id) {
       <tr>
         <td>{{ funcionario.nome }}</td>
         <td class="text-center">{{ funcionario.matricula }}</td>
-        <td class="text-center">{{ funcionario.dataCriacao | date:'dd MMMM yyyy - HH:mm:ss' }}</td>
+        <td class="text-center">
+          {{ funcionario.dataCriacao | date:'dd/MM/yyyy HH:mm:ss' }}
+        </td>
 
         <td>
           <button class="buttonEditar">Editar</button>
@@ -34,13 +47,13 @@
       </tr>
       }
 
-      <!-- Caso não exista nenhum funcionário -->
-      @if (funcionarios.length === 0) {
+      @if (funcionariosFiltrados.length === 0) {
       <tr>
         <td colspan="5" style="text-align: center;">
           Nenhum funcionário encontrado
         </td>
       </tr>
       }
+    </tbody>
   </table>
 </div>
