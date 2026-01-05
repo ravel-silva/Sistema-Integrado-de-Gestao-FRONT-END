@@ -3,19 +3,20 @@ import { Funcionario } from './../../models/funcionario';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-listar-funcionario.component',
-  imports: [DatePipe, CommonModule, FormsModule],
+  imports: [DatePipe, CommonModule, FormsModule, RouterLink],
   templateUrl: './listar-funcionario.component.html',
   styleUrl: './listar-funcionario.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListarFuncionarioComponent implements OnInit {
 
-    funcionariosFiltrados: Funcionario[] = [];
-    dataPesquisa: string = '';
-    funcionarios: Funcionario[] = [];
+  funcionariosFiltrados: Funcionario[] = [];
+  dataPesquisa: string = '';
+  funcionarios: Funcionario[] = [];
 
   constructor(
     private funcionarioService: FuncionarioService,
@@ -41,27 +42,27 @@ export class ListarFuncionarioComponent implements OnInit {
       }
     });
   }
-// pesquisa por data
+  // pesquisa por data
   pesquisarPorData() {
-  const data = this.dataPesquisa?.trim();
-  if (!data) {
-    this.funcionariosFiltrados = [...this.funcionarios];
+    const data = this.dataPesquisa?.trim();
+    if (!data) {
+      this.funcionariosFiltrados = [...this.funcionarios];
+      this.cdr.detectChanges();
+      return;
+    }
+
+    this.funcionariosFiltrados = this.funcionarios.filter(funcionario => {
+
+      // garante conversão correta
+      const dataFormatada = new Date(funcionario.dataCriacao)
+        .toLocaleDateString('pt-BR');
+
+      return dataFormatada.includes(data);
+    });
+
     this.cdr.detectChanges();
-    return;
   }
-
-  this.funcionariosFiltrados = this.funcionarios.filter(funcionario => {
-
-    // garante conversão correta
-    const dataFormatada = new Date(funcionario.dataCriacao)
-      .toLocaleDateString('pt-BR');
-
-    return dataFormatada.includes(data);
-  });
-
-  this.cdr.detectChanges();
-}
-//pesquisar por nome
+  //pesquisar por nome
   pesquisarPorNome(e: Event) {
     const nome = (e.target as HTMLInputElement).value;
     if (!nome || nome.length < 1) {
@@ -80,7 +81,7 @@ export class ListarFuncionarioComponent implements OnInit {
       }
     });
   }
- // pesquisar por matrícula
+  // pesquisar por matrícula
   pesquisarPorMatricula(e: Event) {
     const matricula = (e.target as HTMLInputElement).value;
     if (!matricula || matricula.length < 1) {
@@ -101,19 +102,19 @@ export class ListarFuncionarioComponent implements OnInit {
     });
   }
   // excluir funcionário
-  excluirFuncionario(id: number) {
-    if (!confirm('Tem certeza que deseja excluir este funcionário?')) {
-      return;
-    }
+  excluirFuncionario(id?: number) {
+    if (!confirm('Tem certeza que deseja excluir este funcionário?') && id !== undefined) {
+      this.funcionarioService.excluirFuncionario(id).subscribe({
+        next: () => {
+          this.funcionarios = this.funcionarios.filter(funcionario => funcionario.id);
+          this.cdr.detectChanges();
+        },
+        error: (erro) => {
+          console.error('Erro ao excluir funcionario:', erro);
+          this.cdr.detectChanges();
+        }
 
-    this.funcionarioService.excluirFuncionario(id).subscribe({
-      next: () => {
-        // Recarrega a lista de funcionários após exclusão
-        this.carregarFuncionarios();
-      },
-      error: (erro) => {
-        console.error('Erro ao excluir funcionário:', erro);
-      }
-    });
+      });
+    }
   }
 }

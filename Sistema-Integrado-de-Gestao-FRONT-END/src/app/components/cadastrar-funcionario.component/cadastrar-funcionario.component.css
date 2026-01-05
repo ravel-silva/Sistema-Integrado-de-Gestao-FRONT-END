@@ -1,0 +1,86 @@
+.cadastrar-funcionario {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.cadastrar-funcionario__card {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Título */
+.cadastrar-funcionario__titulo {
+  font-size: 22px;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.cadastrar-funcionario__card form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label */
+.cadastrar-funcionario__card label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+/* Input */
+.cadastrar-funcionario__card input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.cadastrar-funcionario__card input:focus {
+  outline: none;
+  border-color: #1f2937;
+}
+
+/* Botões */
+.cadastrar-funcionario__botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Botões base */
+.btn-salvar,
+.btn-cancelar {
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+/* Salvar */
+.btn-salvar {
+  background-color: #1f2937;
+}
+
+.btn-salvar:hover {
+  background-color: #209CEE;
+}
+
+/* Cancelar */
+.btn-cancelar {
+  background-color: #f65656;
+}
+
+.btn-cancelar:hover {
+  background-color: #dc2626;
+}

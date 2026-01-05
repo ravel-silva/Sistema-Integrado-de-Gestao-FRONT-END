@@ -1,6 +1,6 @@
 <div class="tituloContainer">
   <h1 class="titulo">Funcionários</h1>
-  <button class="buttonAdicionar">Adicionar Funcionário</button>
+  <button [routerLink]="['/cadastrar-funcionario']" class="buttonAdicionar">Adicionar Funcionário</button>
 </div>
 
 <div class="container">
@@ -42,7 +42,7 @@
         </td>
 
         <td>
-          <button (click)="excluirFuncionario(funcionario.id)" >Excluir</button>
+          <button (click)="excluirFuncionario(funcionario.id)">Excluir</button>
         </td>
       </tr>
       }
