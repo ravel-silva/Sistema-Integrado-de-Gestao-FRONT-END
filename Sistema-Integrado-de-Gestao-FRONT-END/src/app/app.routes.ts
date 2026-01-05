@@ -4,6 +4,7 @@ import { CadastrarEquipeComponent } from './components/cadastrar-equipe/cadastra
 import { EditarEquipesComponent } from './components/editar-equipes.component/editar-equipes.component';
 import { ListarFuncionarioComponent } from './components/listar-funcionario.component/listar-funcionario.component';
 import { CadastrarFuncionarioComponent } from './components/cadastrar-funcionario.component/cadastrar-funcionario.component';
+import { EditarFuncionarioComponent } from './components/editar-funcionario.component/editar-funcionario.component';
 
 export const routes: Routes = [
   {
@@ -32,7 +33,7 @@ export const routes: Routes = [
     component: CadastrarFuncionarioComponent
   },
   {
-    path: 'editar-funcionario',
-    component: EditarEquipesComponent
+    path: 'editar-funcionario/:id',
+    component: EditarFuncionarioComponent
   }
 ];

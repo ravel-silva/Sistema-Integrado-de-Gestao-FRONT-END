@@ -1,1 +1,20 @@
-<p>editar-funcionario.component works!</p>
+<div class="editar-funcionario">
+  <div class="editar-funcionario__card">
+    <h2 class="editar-funcionario__titulo">Editar Funcionario</h2>
+
+    <form (ngSubmit)="editarFuncionario()">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" [(ngModel)]="EditarFuncionario.nome" required />
+      <label for="matricula">Matricula:</label>
+      <input type="text" id="matricula" name="matricula" [(ngModel)]="EditarFuncionario.matricula" required />
+
+      <div class="editar-funcionario__botoes">
+        <button type="submit" class="btn-salvar">Salvar</button>
+
+        <button [routerLink]="['/funcionarios']" type="button" class="btn-cancelar">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
